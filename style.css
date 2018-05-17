@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+  .show-for-desktop {
+    display: none;
+  }
+  .show-for-mobile {
+    display: normal;
+  }
+}
+@media (min-width: 768px) {
+  .show-for-desktop {
+    display: normal;
+  }
+  .show-for-mobile {
+    display: none;
+  }
+}
