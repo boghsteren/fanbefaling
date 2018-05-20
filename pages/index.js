@@ -2,34 +2,25 @@ import Link from 'next/link'
 import Head from '../components/head'
 import Nav from '../components/nav'
 import '../style.css'
-import { Segment } from 'semantic-ui-react'
+import {
+  Container,
+  Segment,
+  Item,
+  Image,
+  Header,
+  Divider
+} from 'semantic-ui-react'
 import client from '../services/contentful'
 
-export const Index = props =>
+const Index = props =>
   <div>
     <Head title='Home' />
-    <Nav />
-    <Segment style={{ margin: '10px' }}>
-      {props.podcasts.map(podcast => {
-        return (
-          <div id={podcast.fields.url}>
-            <Link href={`/podcast/${podcast.fields.url}`}>
-              <a>
-                {podcast.fields.titel}
-              </a>
-            </Link>
-          </div>
-        )
-      })}
-    </Segment>
+    <Image bordered src='../static/fanbefaling_banner.png' fluid />
+    <div style={{ margin: '30px', display: 'flex', justifyContent: 'center' }}>
+      <Header textAlign='center'>
+        Fanbefaling.dk giver dig en lille, men nøje udvalgt samling podcasts.
+      </Header>
+    </div>
   </div>
-
-Index.getInitialProps = async function () {
-  const res = await client.getEntries({
-    content_type: 'podcast'
-  })
-
-  return { podcasts: res.items }
-}
 
 export default Index

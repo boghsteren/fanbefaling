@@ -1,60 +1,54 @@
 import Head from './head'
 import Link from 'next/link'
+import {
+  Header,
+  Menu,
+  Dropdown,
+  Container,
+  MenuHeader
+} from 'semantic-ui-react'
+import client from '../services/contentful'
 
-const links = [
-  { href: 'https://github.com/segmentio/create-next-app', label: 'Github' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
-
-const Nav = () => (
+const Nav = props =>
   <nav>
-    <ul>
-      <li>
-        <Link prefetch href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      <ul>
-        {links.map(
-          ({ key, href, label }) => (
-            <li key={key}>
-              <Link href={href}>
-                <a>{label}</a>
-              </Link>
-            </li>
-          )
-        )}
-      </ul>
-    </ul>
+    <Menu size='huge' pointing secondary>
+      <Menu.Item name='FANBEFALING' style={{ fontWeight: 'bold' }} href='/' />
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system,BlinkMacSystemFont,Avenir Next,Avenir,Helvetica,sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
+      <Dropdown item text='Genrer'>
+        <Dropdown.Menu>
+          {props.genrer.map(genre => {
+            return (
+              <Link
+                as={`/genre/${genre.fields.url}`}
+                href={`/genre?id=${genre.fields.url}`}
+                key={genre.fields.url}
+              >
+                <Dropdown.Item>
+                  {genre.fields.titel}
+                </Dropdown.Item>
+              </Link>
+            )
+          })}
+        </Dropdown.Menu>
+      </Dropdown>
+      <Dropdown item text='Udbydere'>
+        <Dropdown.Menu>
+          {props.udbydere.map(udbyder => {
+            return (
+              <Link
+                as={`/udbyder/${udbyder.fields.url}`}
+                href={`/udbyder?id=${udbyder.fields.url}`}
+                key={udbyder.fields.url}
+              >
+                <Dropdown.Item>
+                  {udbyder.fields.navn}
+                </Dropdown.Item>
+              </Link>
+            )
+          })}
+        </Dropdown.Menu>
+      </Dropdown>
+    </Menu>
   </nav>
-)
 
 export default Nav
