@@ -13,11 +13,12 @@ import client from '../services/contentful'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import Link from 'next/link'
+import '../style.css'
 
 export const Udbyder = props => {
   return (
     <div>
-      <Head />
+      <Head title={`${props.udbyder.fields.navn} pocasts - Fanbefaling`} />
       <Divider hidden />
       <div style={{ margin: '30px' }}>
         <Grid divided columns={2} stackable>
@@ -50,6 +51,7 @@ export const Udbyder = props => {
                     key={podcast.fields.url}
                   >
                     <Image
+                      className='linkimage'
                       bordered
                       src={podcast.fields.billede.fields.file.url}
                     />

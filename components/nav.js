@@ -13,8 +13,7 @@ const Nav = props =>
   <nav>
     <Menu size='huge' pointing secondary>
       <Menu.Item name='FANBEFALING' style={{ fontWeight: 'bold' }} href='/' />
-
-      <Dropdown item text='Genrer'>
+      <Dropdown simple item text='Genrer'>
         <Dropdown.Menu>
           {props.genrer.map(genre => {
             return (
@@ -31,7 +30,7 @@ const Nav = props =>
           })}
         </Dropdown.Menu>
       </Dropdown>
-      <Dropdown item text='Udbydere'>
+      <Dropdown item simple text='Udbydere'>
         <Dropdown.Menu>
           {props.udbydere.map(udbyder => {
             return (

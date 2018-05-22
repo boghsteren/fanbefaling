@@ -15,6 +15,16 @@ app
       const queryParams = { id: req.params.id }
       app.render(req, res, actualPage, queryParams)
     })
+    server.get('/genre/:id', (req, res) => {
+      const actualPage = '/genre'
+      const queryParams = { id: req.params.id }
+      app.render(req, res, actualPage, queryParams)
+    })
+    server.get('/udbyder/:id', (req, res) => {
+      const actualPage = '/udbyder'
+      const queryParams = { id: req.params.id }
+      app.render(req, res, actualPage, queryParams)
+    })
     server.get('*', (req, res) => {
       return handle(req, res)
     })

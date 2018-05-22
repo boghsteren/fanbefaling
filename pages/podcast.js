@@ -12,11 +12,12 @@ import ReactMarkdown from 'react-markdown'
 import client from '../services/contentful'
 import Head from 'next/head'
 import Nav from '../components/nav'
+import '../style.css'
 
 export const Podcast = props => {
   return (
     <div>
-      <Head />
+      <Head title={`${props.podcast.fields.titel} - Fanbefaling`} />
       <div style={{ margin: '30px' }}>
         <Grid divided stackable>
           <Grid.Row columns={2}>
@@ -106,6 +107,7 @@ export const Podcast = props => {
                       href={`/podcast?id=${podcast.fields.url}`}
                     >
                       <Image
+                        className='linkimage'
                         bordered
                         src={podcast.fields.billede.fields.file.url}
                       />

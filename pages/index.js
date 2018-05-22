@@ -14,7 +14,7 @@ import client from '../services/contentful'
 
 const Index = props =>
   <div>
-    <Head title='Home' />
+    <Head title='Forside - Fanbefaling' />
     <Image bordered src='../static/fanbefaling_banner.png' fluid />
     <div style={{ margin: '30px', display: 'flex', justifyContent: 'center' }}>
       <Header textAlign='center'>
