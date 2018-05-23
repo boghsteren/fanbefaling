@@ -44,9 +44,10 @@ export default class Cookiebanner extends React.Component {
           color="grey"
         >
           <Message.Header>Cookie Alert</Message.Header>
-          Cookies are being used in the making of this website!
-          <Link href="/privacy">
-            <a> Read all about it!</a>
+          Vi bruger cookies til at tælle vores besøgende og forstå deres
+          opførsel!
+          <Link href="/privatliv">
+            <a> Læs om det!</a>
           </Link>
         </Message>
       </div>

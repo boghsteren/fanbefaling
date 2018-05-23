@@ -2,6 +2,8 @@ import App, { Container } from 'next/app'
 import React from 'react'
 import client from '../services/contentful'
 import Nav from '../components/nav'
+import Cookiebanner from '../components/cookiebanner'
+import Footer from '../components/footer'
 
 export default class MyApp extends App {
   static async getInitialProps ({ Component, router, ctx }) {
@@ -34,6 +36,8 @@ export default class MyApp extends App {
           podcasts={podcasts.items}
           genrer={genrer.items}
         />
+        <Cookiebanner />
+        <Footer />
       </Container>
     )
   }
