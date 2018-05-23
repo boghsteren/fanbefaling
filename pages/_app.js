@@ -29,7 +29,11 @@ export default class MyApp extends App {
     return (
       <Container>
         <Nav genrer={genrer.items} udbydere={udbydere.items} />
-        <Component {...pageProps} podcasts={podcasts.items} />
+        <Component
+          {...pageProps}
+          podcasts={podcasts.items}
+          genrer={genrer.items}
+        />
       </Container>
     )
   }

@@ -18,3 +18,17 @@
   transform: scale(1.05);
   transition: transform 0.5s;
 }
+.linkimage:not(:hover) {
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
+.genreitem:hover {
+  filter: none;
+  transition: filter 0.3s;
+}
+
+.genreitem {
+  filter: grayscale(100%);
+  cursor: pointer;
+}

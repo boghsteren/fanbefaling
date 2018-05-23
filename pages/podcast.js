@@ -94,7 +94,7 @@ export const Podcast = props => {
             </Header>
           </div>
           <Grid>
-            <Grid.Row centered>
+            <Grid.Row>
               <Image.Group size='small'>
                 {props.podcasts.map(podcast => {
                   return (
