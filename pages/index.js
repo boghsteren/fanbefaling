@@ -25,29 +25,41 @@ const Index = props =>
     <Header size='large' textAlign='center'>
       Det jeg hører lige nu
     </Header>
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
+      }}
+    >
       {props.podcasts.map(podcast => {
         return (
           podcast.fields.featured === true &&
           <div
             style={{
               display: 'flex',
-              justifyContent: 'center',
-              margin: '30px'
+              flexDirection: 'column',
+              justifyContent: 'center'
             }}
           >
-            <div>
-              <Divider />
+            {' '}<Divider hidden />
+            <Link
+              passHref
+              as={`/podcast/${podcast.fields.url}`}
+              href={`/podcast?id=${podcast.fields.url}`}
+              key={podcast.fields.url}
+            >
               <Image
                 centered
                 className='linkimage'
                 size='small'
                 src={podcast.fields.billede.fields.file.url}
               />
-              <Header size='large' sub textAlign='center'>
-                {podcast.fields.blurb}
-              </Header>
-            </div>
+            </Link>
+            <Header size='large' sub textAlign='center'>
+              {podcast.fields.blurb}
+            </Header>
+            <Divider hidden />
           </div>
         )
       })}
