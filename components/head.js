@@ -1,9 +1,10 @@
 import NextHead from 'next/head'
 import { string } from 'prop-types'
 
-const defaultDescription = ''
-const defaultOGURL = ''
-const defaultOGImage = ''
+const defaultDescription =
+  ' Fanbefaling giver dig en lille, men nøje udvalgt samling podcasts. Læs mine anbefalinger idag...'
+const defaultOGURL = 'fanbefaling.dk'
+const defaultOGImage = '../static/fanbefaling_banner.png'
 
 const Head = props =>
   <NextHead>

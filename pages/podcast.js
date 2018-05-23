@@ -17,7 +17,13 @@ import '../style.css'
 export const Podcast = props => {
   return (
     <div>
-      <Head title={`${props.podcast.fields.titel} - Fanbefaling`} />
+      <Head
+        title={`${props.podcast.fields.titel} - Fanbefaling`}
+        url={`fanbefaling.dk/podcast/${props.podcast.fields.url}`}
+        description={`${props.podcast.fields
+          .blurb} - Fanbefalings anbefaling af ${props.podcast.fields.titel}`}
+        ogImage={props.podcast.billede.fields.file.url}
+      />
       <div style={{ margin: '30px' }}>
         <Grid divided stackable>
           <Grid.Row columns={2}>
@@ -49,6 +55,7 @@ export const Podcast = props => {
                 </div>
                 <div>
                   <Link
+                    prefetch
                     as={`/udbyder/${props.podcast.fields.udbyder.fields.url}`}
                     href={`/udbyder?id=${props.podcast.fields.udbyder.fields
                       .url}`}
@@ -102,6 +109,7 @@ export const Podcast = props => {
                       props.podcast.fields.kategori.sys.id[0] &&
                     podcast.sys.id !== props.podcast.sys.id &&
                     <Link
+                      prefetch
                       passHref
                       as={`/podcast/${podcast.fields.url}`}
                       href={`/podcast?id=${podcast.fields.url}`}

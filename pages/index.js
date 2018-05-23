@@ -41,9 +41,11 @@ const Index = props =>
               flexDirection: 'column',
               justifyContent: 'center'
             }}
+            key={podcast.fields.titel}
           >
-            {' '}<Divider hidden />
+            <Divider hidden />
             <Link
+              prefetch
               passHref
               as={`/podcast/${podcast.fields.url}`}
               href={`/podcast?id=${podcast.fields.url}`}
@@ -71,8 +73,9 @@ const Index = props =>
     >
       {props.genrer.map(genre => {
         return (
-          <div style={{ margin: '10px' }}>
+          <div key={genre.fields.titel} style={{ margin: '10px' }}>
             <Link
+              prefetch
               passHref
               as={`/genre/${genre.fields.url}`}
               href={`/genre?id=${genre.fields.url}`}
@@ -84,8 +87,7 @@ const Index = props =>
                 size='small'
                 label={{
                   attached: 'bottom',
-                  content: `${genre.fields.titel}`,
-                  textAlign: 'center'
+                  content: `${genre.fields.titel}`
                 }}
               />
             </Link>

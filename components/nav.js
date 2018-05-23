@@ -8,16 +8,23 @@ import {
   MenuHeader
 } from 'semantic-ui-react'
 import client from '../services/contentful'
+import '../style.css'
 
 const Nav = props =>
   <nav>
-    <Menu size='huge' pointing secondary>
-      <Menu.Item name='FANBEFALING' style={{ fontWeight: 'bold' }} href='/' />
+    <Menu size='large' pointing secondary>
+      <Menu.Item
+        fitted
+        name='FANBEFALING'
+        style={{ fontWeight: 'bold' }}
+        href='/'
+      />
       <Dropdown item text='Genrer'>
         <Dropdown.Menu>
           {props.genrer.map(genre => {
             return (
               <Link
+                prefetch
                 as={`/genre/${genre.fields.url}`}
                 href={`/genre?id=${genre.fields.url}`}
                 key={genre.fields.url}
@@ -30,11 +37,12 @@ const Nav = props =>
           })}
         </Dropdown.Menu>
       </Dropdown>
-      <Dropdown item text='Udbydere'>
-        <Dropdown.Menu>
+      <Dropdown className='show-for-desktop' item text='Udbydere'>
+        <Dropdown.Menu className='show-for-desktop'>
           {props.udbydere.map(udbyder => {
             return (
               <Link
+                prefetch
                 as={`/udbyder/${udbyder.fields.url}`}
                 href={`/udbyder?id=${udbyder.fields.url}`}
                 key={udbyder.fields.url}

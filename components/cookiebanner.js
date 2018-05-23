@@ -46,7 +46,7 @@ export default class Cookiebanner extends React.Component {
           <Message.Header>Cookie Alert</Message.Header>
           Vi bruger cookies til at tælle vores besøgende og forstå deres
           opførsel!
-          <Link href="/privatliv">
+          <Link prefetch href="/privatliv">
             <a> Læs om det!</a>
           </Link>
         </Message>

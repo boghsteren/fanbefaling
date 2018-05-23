@@ -13,10 +13,10 @@ import client from '../services/contentful'
 const Footer = props =>
   <div>
     <div>
-      <Divider hidden />
+      <Divider />
     </div>
     <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <Link href='/privatliv'>
+      <Link prefetch href='/privatliv'>
         <a>Privatliv</a>
       </Link>
     </div>

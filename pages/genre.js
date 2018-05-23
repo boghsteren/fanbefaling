@@ -18,7 +18,13 @@ import '../style.css'
 export const Genre = props => {
   return (
     <div>
-      <Head title={`${props.genre.fields.titel} podcasts - Fanbefaling`} />
+      <Head
+        title={`${props.genre.fields.titel} podcasts - Fanbefaling`}
+        url={`fanbefaling.dk/genre/${props.genre.fields.url}`}
+        description={`Find de fedeste podcasts om ${props.genre.fields
+          .titel} hos Fanbefaling.`}
+        ogImage={props.genre.billede.fields.file.url}
+      />
       <Divider hidden />
       <div style={{ margin: '30px' }}>
         <Grid divided columns={2} stackable>
@@ -47,6 +53,7 @@ export const Genre = props => {
                   podcast.fields.kategori.fields.titel ===
                     props.genre.fields.titel &&
                     <Link
+                      prefetch
                       passHref
                       as={`/podcast/${podcast.fields.url}`}
                       href={`/podcast?id=${podcast.fields.url}`}
