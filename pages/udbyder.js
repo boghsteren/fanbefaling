@@ -23,7 +23,7 @@ export const Udbyder = props => {
         url={`fanbefaling.dk/udbyder/${props.udbyder.fields.url}`}
         description={`Find de fedeste podcasts fra ${props.udbyder.fields
           .titel} hos Fanbefaling`}
-        ogImage={props.udbyder.billede.fields.file.url}
+        ogImage={props.udbyder.fields.billede.fields.file.url}
       />
       <Divider hidden />
       <div style={{ margin: '30px' }}>
