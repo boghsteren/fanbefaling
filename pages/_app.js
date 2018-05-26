@@ -4,6 +4,7 @@ import client from '../services/contentful'
 import Nav from '../components/nav'
 import Cookiebanner from '../components/cookiebanner'
 import Footer from '../components/footer'
+import Head from '../components/head'
 
 export default class MyApp extends App {
   static async getInitialProps ({ Component, router, ctx }) {
@@ -30,6 +31,7 @@ export default class MyApp extends App {
     const { Component, pageProps, genrer, podcasts, udbydere } = this.props
     return (
       <Container>
+        <Head />
         <Nav genrer={genrer.items} udbydere={udbydere.items} />
         <Component
           {...pageProps}
