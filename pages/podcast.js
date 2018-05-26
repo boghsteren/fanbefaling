@@ -21,7 +21,7 @@ export const Podcast = props => {
       <div>
         <Head
           title={`${props.podcast.fields.titel} - Fanbefaling`}
-          url={`fanbefaling.dk/podcast/${props.podcast.fields.url}`}
+          url={`http://www.fanbefaling.dk/podcast/${props.podcast.fields.url}`}
           description={`${props.podcast.fields
             .blurb} - Fanbefalings anbefaling af ${props.podcast.fields.titel}`}
           ogImage={props.podcast.fields.billede.fields.file.url}

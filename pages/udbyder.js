@@ -22,7 +22,7 @@ export const Udbyder = props => {
       <div>
         <Head
           title={`${props.udbyder.fields.navn} pocasts - Fanbefaling`}
-          url={`fanbefaling.dk/udbyder/${props.udbyder.fields.url}`}
+          url={`http://www.fanbefaling.dk/udbyder/${props.udbyder.fields.url}`}
           description={`Find de fedeste podcasts fra ${props.udbyder.fields
             .titel} hos Fanbefaling`}
           ogImage={props.udbyder.fields.billede.fields.file.url}

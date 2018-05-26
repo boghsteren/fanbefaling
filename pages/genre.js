@@ -22,7 +22,7 @@ export const Genre = props => {
       <div>
         <Head
           title={`${props.genre.fields.titel} podcasts - Fanbefaling`}
-          url={`fanbefaling.dk/genre/${props.genre.fields.url}`}
+          url={`http://www.fanbefaling.dk/genre/${props.genre.fields.url}`}
           description={`Find de fedeste podcasts om ${props.genre.fields
             .titel} hos Fanbefaling.`}
           ogImage={props.genre.fields.billede.fields.file.url}
