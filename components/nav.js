@@ -23,7 +23,7 @@ Router.onRouteChangeError = () => NProgress.done()
 const Nav = props =>
   <Transition transitionOnMount duration='300' animation='fade'>
     <nav>
-      <Menu size='large' pointing secondary>
+      <Menu pointing secondary>
         <Link href='/'>
           <Menu.Item fitted name='FANBEFALING' style={{ fontWeight: 'bold' }} />
         </Link>

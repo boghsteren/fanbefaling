@@ -19,12 +19,13 @@ const Footer = props =>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Link prefetch href='/privatliv'>
-          <a>Privatliv</a>
+          <a style={{ margin: '20px' }}>Læs vores privatlivspolitik</a>
         </Link>
+        <a href='http://www.episodefriis.dk' style={{ margin: '20px' }}>
+          Find fede tv-serier hos episodeFriis
+        </a>
       </div>
-      <div>
-        <Divider hidden />
-      </div>
+      <div />
     </div>
   </Transition>
 
