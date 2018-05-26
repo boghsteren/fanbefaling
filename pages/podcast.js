@@ -11,7 +11,7 @@ import {
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import client from '../services/contentful'
-import Head from 'next/head'
+import Head from '../components/head'
 import Nav from '../components/nav'
 import '../style.css'
 

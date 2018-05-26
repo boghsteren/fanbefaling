@@ -31,7 +31,6 @@ export default class MyApp extends App {
     const { Component, pageProps, genrer, podcasts, udbydere } = this.props
     return (
       <Container>
-        <Head />
         <Nav genrer={genrer.items} udbydere={udbydere.items} />
         <Component
           {...pageProps}
