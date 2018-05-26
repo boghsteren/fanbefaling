@@ -6,23 +6,26 @@ import {
   Dropdown,
   Container,
   MenuHeader,
-  Divider
+  Divider,
+  Transition
 } from 'semantic-ui-react'
 import client from '../services/contentful'
 
 const Footer = props =>
-  <div>
+  <Transition transitionOnMount duration='1000'>
     <div>
-      <Divider />
+      <div>
+        <Divider />
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Link prefetch href='/privatliv'>
+          <a>Privatliv</a>
+        </Link>
+      </div>
+      <div>
+        <Divider hidden />
+      </div>
     </div>
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <Link prefetch href='/privatliv'>
-        <a>Privatliv</a>
-      </Link>
-    </div>
-    <div>
-      <Divider hidden />
-    </div>
-  </div>
+  </Transition>
 
 export default Footer
