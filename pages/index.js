@@ -16,7 +16,7 @@ import client from '../services/contentful'
 const Index = props =>
   <Transition transitionOnMount duration='500' animation='fade'>
     <div>
-      <Head title='Forside - Fanbefaling' />
+      <Head title='Fanbefaling - fede podcasts' />
       <Image bordered src='../static/fanbefaling_banner.png' fluid />
       <div
         style={{ margin: '30px', display: 'flex', justifyContent: 'center' }}

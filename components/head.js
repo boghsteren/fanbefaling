@@ -2,7 +2,7 @@ import NextHead from 'next/head'
 import { string } from 'prop-types'
 
 const defaultDescription =
-  ' Fanbefaling giver dig en lille, men nøje udvalgt samling podcasts. Læs mine anbefalinger idag...'
+  'Fanbefaling giver dig en lille, men nøje udvalgt samling podcasts.'
 const defaultOGURL = 'http://www.fanbefaling.dk'
 const defaultOGImage =
   'http://www.fanbefaling.dk/static/fanbefaling_banner.png'
