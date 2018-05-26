@@ -3,12 +3,13 @@ import { string } from 'prop-types'
 
 const defaultDescription =
   ' Fanbefaling giver dig en lille, men nøje udvalgt samling podcasts. Læs mine anbefalinger idag...'
-const defaultOGURL = 'fanbefaling.dk'
-const defaultOGImage = '../static/fanbefaling_banner.png'
+const defaultOGURL = 'http://www.fanbefaling.dk'
+const defaultOGImage =
+  'http://www.fanbefaling.dk/static/fanbefaling_banner.png'
 
 const Head = props =>
   <NextHead>
-    <meta charSet='UTF-8' />
+    <meta charset='UTF-8' />
     <title>
       {props.title || ''}
     </title>
