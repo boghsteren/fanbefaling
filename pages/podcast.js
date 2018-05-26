@@ -24,7 +24,7 @@ export const Podcast = props => {
           url={`http://www.fanbefaling.dk/podcast/${props.podcast.fields.url}`}
           description={`${props.podcast.fields
             .blurb} - Fanbefalings anbefaling af ${props.podcast.fields.titel}`}
-          ogImage={props.podcast.fields.billede.fields.file.url}
+          ogImage={`http:${props.podcast.fields.billede.fields.file.url}`}
         />
         <div style={{ margin: '30px' }}>
           <Grid divided stackable>
